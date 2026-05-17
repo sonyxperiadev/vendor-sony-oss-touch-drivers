@@ -1,0 +1,19 @@
+ifeq ($(TOUCH_PATH),)
+TOUCH_PATH := $(srctree)/techpack/touch
+endif
+
+# Platforms
+ifeq ($(CONFIG_ARCH_SONY_NAGARA), y)
+	include $(TOUCH_PATH)/config/nagara.conf
+endif
+
+ccflags-y += -I$(TOUCH_PATH)/../display/include
+
+sec_touchscreen-y := \
+	sec_ts.o \
+	sec_ts_fn.o \
+	sec_ts_fw.o \
+	sec_ts_only_vendor.o \
+	sec_cmd.o
+
+obj-$(CONFIG_TOUCHSCREEN_SEC_TS) := sec_touchscreen.o
