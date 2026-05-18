@@ -1,0 +1,30 @@
+ifeq ($(TOUCH_PATH),)
+TOUCH_PATH := $(srctree)/techpack/touch
+endif
+
+# Platforms
+ifeq ($(CONFIG_ARCH_SONY_ELBE), y)
+	include $(TOUCH_PATH)/config/elbe.conf
+endif
+
+ccflags-y += -I$(TOUCH_PATH)/../display/include
+
+focaltech_fts-y := \
+	focaltech_core.o \
+	focaltech_debug.o \
+	focaltech_esdcheck.o \
+	focaltech_ex_fun.o \
+	focaltech_ex_mode.o \
+	focaltech_flash.o \
+	focaltech_gesture.o \
+	focaltech_hp.o \
+	focaltech_i2c.o \
+	focaltech_point_report_check.o \
+	focaltech_proximity.o \
+	focaltech_flash/focaltech_upgrade_ft3610.o \
+	focaltech_test/focaltech_test.o \
+	focaltech_test/focaltech_test_ini.o \
+	focaltech_test/supported_ic/focaltech_test_ft3610.o
+
+
+obj-$(CONFIG_TOUCH_FOCALTECH) := focaltech_fts.o
