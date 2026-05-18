@@ -220,7 +220,9 @@
 /*
  * choose your ic chip type of focaltech
  */
+#ifndef FTS_CHIP_TYPE
 #define FTS_CHIP_TYPE   _FT3610
+#endif
 
 /******************* Enables *********************/
 /*********** 1 to enable, 0 to disable ***********/
