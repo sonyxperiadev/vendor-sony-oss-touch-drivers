@@ -912,8 +912,8 @@ static ssize_t fts_driverinfo_show(
                       pdata->max_touch_number);
 
     count += snprintf(buf + count, PAGE_SIZE,
-                      "reset gpio:%d,int gpio:%d,irq:%d\n",
-                      pdata->reset_gpio, pdata->irq_gpio, ts_data->irq);
+                      "reset gpio:%d,int gpio:%d,avdd gpio:%d,irq:%d\n",
+                      pdata->reset_gpio, pdata->irq_gpio, pdata->avdd_gpio, ts_data->irq);
 
     count += snprintf(buf + count, PAGE_SIZE, "IC ID:0x%02x%02x\n",
                       ts_data->ic_info.ids.chip_idh,
