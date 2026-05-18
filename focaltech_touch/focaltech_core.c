@@ -2165,22 +2165,7 @@ static void fts_panel_notifier_callback(enum panel_event_notifier_tag tag,
 static void fts_register_for_panel_events(struct device_node *dp,
         struct fts_ts_data *ts_data)
 {
-    const char *touch_type;
     void *cookie = NULL;
-    int rc = 0;
-
-    rc = of_property_read_string(dp, "focaltech,touch-type",
-            &touch_type);
-    if (rc) {
-        dev_warn(&fts_data->client->dev,
-            "%s: No touch type\n", __func__);
-        return;
-    }
-
-    if (strcmp(touch_type, "primary")) {
-        pr_err("Invalid touch type\n");
-        return;
-    }
 
     cookie = panel_event_notifier_register(PANEL_EVENT_NOTIFICATION_PRIMARY,
             PANEL_EVENT_NOTIFIER_CLIENT_PRIMARY_TOUCH, active_panel,
