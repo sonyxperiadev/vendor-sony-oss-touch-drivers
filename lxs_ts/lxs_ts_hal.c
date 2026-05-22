@@ -1693,9 +1693,10 @@ int lxs_hal_reset(struct lxs_ts *ts, int ctrl, int pwr_con)
 
 	default:
 		t_dev_err(ts->dev, "unknown reset type, 0x%X\n", ctrl);
-		chip->reset_is_on_going = false;
 		break;
 	}
+
+	chip->reset_is_on_going = false;
 
 	mutex_unlock(&ts->reset_lock);
 
