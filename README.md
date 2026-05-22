@@ -6,3 +6,4 @@
 |[columbia](https://github.com/sonyxperiadev/device-sony-columbia)|[pdx246](https://github.com/sonyxperiadev/device-sony-pdx246)|focaltech_touch|
 |[elbe](https://github.com/sonyxperiadev/device-sony-elbe)|[pdx257](https://github.com/sonyxperiadev/device-sony-pdx257)|focaltech_touch|
 |[nagara](https://github.com/sonyxperiadev/device-sony-nagara)|[pdx223](https://github.com/sonyxperiadev/device-sony-pdx223), [pdx224](https://github.com/sonyxperiadev/device-sony-pdx224)|sec_ts|
+|[yodo](https://github.com/sonyxperiadev/device-sony-yodo)|[pdx234](https://github.com/sonyxperiadev/device-sony-pdx234), [pdx237](https://github.com/sonyxperiadev/device-sony-pdx237)|lxs_ts|

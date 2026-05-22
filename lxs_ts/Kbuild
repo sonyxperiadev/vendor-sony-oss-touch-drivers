@@ -1,0 +1,27 @@
+ifeq ($(TOUCH_PATH),)
+TOUCH_PATH := $(srctree)/techpack/touch
+endif
+
+# Platforms
+ifeq ($(CONFIG_ARCH_SONY_YODO), y)
+	include $(TOUCH_PATH)/config/yodo.conf
+endif
+
+ccflags-y += -I$(TOUCH_PATH)/../display/include
+
+lxs_touchscreen-y := \
+	lxs_ts.o \
+	lxs_ts_fn.o \
+	lxs_ts_hal.o \
+	lxs_ts_hal_fw.o \
+	lxs_ts_hal_prd.o \
+	lxs_ts_hal_abt.o \
+	lxs_ts_sysfs.o
+
+lxs_touchscreen-$(CONFIG_TOUCHSCREEN_LXS_SW82907) += \
+	touch_sw82907.o
+
+lxs_touchscreen-$(CONFIG_TOUCHSCREEN_LXS_LX82907A) += \
+	touch_lx82907a.o
+
+obj-$(CONFIG_TOUCHSCREEN_LXS) := lxs_touchscreen.o
